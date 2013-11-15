@@ -1,0 +1,39 @@
+{
+  "firstName": "Neil",
+  "headline": "Expert Java/Scala/Web Technologist",
+  "id": "QeOH2MK8PL",
+  "industry": "Computer Software",
+  "lastName": "Shannon",
+  "location": {
+    "country": {"code": "us"},
+    "name": "Greater Atlanta Area"
+  },
+  "pictureUrl": "http://m3.licdn.com/mpr/mprx/0_cDHk-hpo59W1XIhrzumU-_OwFnxxHITrv2pR-_7s4Pw7c7nKUI4eyiRNd408w28p9aosjXgDY9je",
+  "positions": {
+    "_total": 2,
+    "values": [
+      {
+        "company": {
+          "id": 164835,
+          "industry": "Automotive",
+          "name": "Manheim",
+          "size": "10,001+ employees",
+          "type": "Privately Held"
+        },
+        "isCurrent": true,
+        "title": "Senior Software Engineer (Consultant)"
+      },
+      {
+        "company": {
+          "id": 2710609,
+          "industry": "Computer Software",
+          "name": "NTS Development LLC",
+          "size": "Myself Only",
+          "type": "Privately Held"
+        },
+        "isCurrent": true,
+        "title": "President"
+      }
+    ]
+  }
+}

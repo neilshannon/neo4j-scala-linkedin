@@ -1,0 +1,40 @@
+-@ val pageTitle: String
+-@ val person: com.neilshannon.model.Person
+
+!!! 5
+html(lang="en")
+    head
+        title= pageTitle
+        script(src='/public/js/bootstrap.min.js')
+        link{:rel => 'stylesheet', :href => '/public/css/bootstrap.min.css', :type => 'text/css'}
+        link{:rel => 'stylesheet', :href => '/public/css/bootstrap-responsive.min.css', :type => 'text/css'}
+        link{:rel => 'stylesheet', :href => '/public/css/style.css', :type => 'text/css'}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    body
+        div.navbar.navbar-inverse.navbar-fixed-top
+            div.navbar-inner
+                div.container-fluid
+                    button.btn.btn-navbar
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.brand(href='#') NTS Development LLC
+                    div.nav-collapse.collapse
+                        ul.nav
+                            li.active
+                                a(href='#') Home
+
+        div.container-fluid
+            div.content
+                div.page-header
+                    h1 #{pageTitle}
+                h3 Ready to load your LinkedIn connections?
+                a.btn.btn-primary(href="/load_connections") Load Connections!
+        footer
+            p.center &copy; NTS Development LLC 2013
+
+        :javascript
+            function showLoadingConnections(){
+
+            }

@@ -1,0 +1,59 @@
+-@ val pageTitle: String
+-@ val error: String = ""
+-@ val success: String = ""
+-@ val person: com.neilshannon.model.Person
+-@ val stats: Map[String, Long]
+
+!!! 5
+html(lang="en")
+  head
+    title= pageTitle
+    script{:src => '/public/js/jquery-1.9.1.min.js', :type => 'text/javascript'}
+    script{:src => '/public/js/bootstrap.min.js', :type => 'text/javascript'}
+    link{:rel => 'stylesheet', :href => '/public/css/bootstrap.min.css', :type => 'text/css'}
+    link{:rel => 'stylesheet', :href => '/public/css/bootstrap-responsive.min.css', :type => 'text/css'}
+    link{:rel => 'stylesheet', :href => '/public/css/style.css', :type => 'text/css'}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  body
+    div.navbar.navbar-inverse.navbar-fixed-top
+      div.navbar-inner
+        div.container-fluid
+          button.btn.btn-navbar
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.brand(href='#') NTS Development LLC
+          div.nav-collapse.collapse
+            ul.nav
+              li.active
+                a(href='#') Home
+
+    - if(!error.isEmpty)
+      div.alert.alert-error.fade.in
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        | #{error}
+
+    - else if(!success.isEmpty)
+      div.alert.alert-success.fade.in
+        <button class="close" type="button" data-dismiss="alert">&times;</button>
+        | #{success}
+
+    div.container-fluid
+      div.content
+        div.page-header
+          div.well
+            img(src='#{person.pictureUrl}')
+            p Hi #{person.firstName}!  You're logged in.
+      div.myConnections
+        ul
+          li First Degree: #{stats("1")}
+          -if(stats("2") > 0)
+            li Second Degree: #{stats("2")}
+          -if(stats("3") > 0)
+            li Third Degree: #{stats("3")}
+    footer
+      p.center &copy; NTS Development LLC 2013
+
+    :javascript
+      $('div.alert').alert();

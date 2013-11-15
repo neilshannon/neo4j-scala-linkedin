@@ -1,0 +1,8 @@
+dependencies: 
+  cache_directories: 
+    - ~/.sbt
+  override: 
+    - "[[ -d ~/.sbt ]] || { (mkdir -p  ~/.sbt/.lib/0.12.2) && (curl -o ~/.sbt/.lib/0.12.2/sbt-launch.jar http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.12.2/sbt-launch.jar) }"
+test: 
+  override: 
+    - "sbt -sbt-version 0.12.2 test:test"
