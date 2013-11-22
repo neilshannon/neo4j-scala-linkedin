@@ -1,3 +1,7 @@
 .center {
     text-align: center;
 }
+
+body {
+    padding-top: 50px;
+}

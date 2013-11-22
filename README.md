@@ -11,6 +11,21 @@ A demo project to import a user's connections into a neo4j graph database via th
 - Embedded H2 database
 - Squeryl implementation
 
+Prerequisites
+--------------------
+- JDK 6+ installed
+- sbt 0.12.2+ installed
+- LinkedIn API key
+- Update application.conf in src/main/resources to reflect your LinkedIn API key
+
+How to Test
+--------------------
+
+At the command line, run
+
+    sbt
+    test
+
 How to Build and Run
 --------------------
 

@@ -5,9 +5,9 @@
 html(lang="en")
     head
         title= pageTitle
-        script(src='/public/js/bootstrap.min.js')
+        script{:src => '/public/js/jquery-1.9.1.min.js', :type => 'text/javascript'}
+        script{:src => '/public/js/bootstrap.min.js', :type => 'text/javascript'}
         link{:rel => 'stylesheet', :href => '/public/css/bootstrap.min.css', :type => 'text/css'}
-        link{:rel => 'stylesheet', :href => '/public/css/bootstrap-responsive.min.css', :type => 'text/css'}
         link{:rel => 'stylesheet', :href => '/public/css/style.css', :type => 'text/css'}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 

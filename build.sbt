@@ -20,7 +20,7 @@ libraryDependencies ++= Seq(
    "com.typesafe" % "config" % "1.0.0",
    "net.databinder" %% "dispatch-core" % "0.8.10",
    "net.databinder" %% "dispatch-http" % "0.8.10",
-   "net.liftweb" %% "lift-json" % "2.5",
+   "net.liftweb" %% "lift-json" % "2.6-M2",
    "org.squeryl" %% "squeryl" % "0.9.5-6",
    "org.neo4j" % "neo4j" % "1.9.4",
    "com.h2database" % "h2" % "1.2.127",
