@@ -16,7 +16,7 @@ object Graph {
       "c.company as company, count(c) as count;"
 
   val relationshipCountsByDepthForUserQuery =
-    "start s = node:PeopleIndex(linkedin_id='%s') match path=s-[:CONNECTED*1..3]- () " +
+    "start s = node:PeopleIndex(linkedin_id='%s') match path=s-[:CONNECTED*1..3]-> () " +
       "return length(path) as depth, count(length(path)) as count order by depth;"
 
   def getAllConnections = {
