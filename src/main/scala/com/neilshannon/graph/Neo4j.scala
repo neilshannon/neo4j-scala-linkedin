@@ -43,7 +43,7 @@ object Neo4j extends Neo4jWrapper with SingletonEmbeddedGraphDatabaseServiceProv
       case Some(relationship) => relationship
       case None =>
         withTx { implicit neo =>
-          val relationship = start --> "CONNECTED" --> end <;
+          val relationship = start --> "CONNECTED" --> end <()
           indexRelationship(relationship, start, end)
         }
     }

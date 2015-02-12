@@ -1,15 +1,26 @@
 neo4j-linkedin
 ==============
 
-A demo project to import a user's connections into a neo4j graph database via the LinkedIn Connections API.  This project is intended to accompany Neil Shannon's "Neo4j In Practice" presentation.
+This project allows a group of people in a room to log in to their LinkedIn accounts and determine how everyone
+in the room is connected to one another.  Authentication occurs with LinkedIn via OAuth2.  The connections are
+fetched for each user via the LinkedIn Connections API and loaded into a private graph database.  As each user
+logs in, the connections are formed between them and other users (if they know each other on LinkedIn) in the private
+graph database.  Eventually the degree of connectedness on different levels (1st degree - direct connection, 2nd degree
+friend-of-a-friend connection, 3rd degree - friend reachable from friend's network) can be displayed to the logged
+in user.
 
 *Included features:*
 - Full OAuth2 authentication with LinkedIn
-- Linkedin Connections API usage
+- LinkedIn Connections API usage
 - Embedded Neo4j graph database
 - Cypher query langage examples
-- Embedded H2 database
+- Embedded H2 SQL database
 - Squeryl implementation
+- Dispatch HTTP client to make API requests
+- unfiltered HTTP routing for the application
+- Jade templating
+- specs2 automated tests
+- Lift json parsing
 
 Prerequisites
 --------------------

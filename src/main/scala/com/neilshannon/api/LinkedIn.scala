@@ -1,19 +1,15 @@
 package com.neilshannon.api
 
-import com.neilshannon.security.MD5
-import scala.collection.mutable
 import com.neilshannon.config.Configuration
 import com.neilshannon.json.LiftJsonParsing
-import net.liftweb.json.JsonAST._
-import net.liftweb.json.{JsonAST, DefaultFormats}
-import org.clapper.avsl.Logger
-import net.liftweb.json.JsonAST.JField
 import com.neilshannon.model.Person
-import net.liftweb.json.JsonAST.JString
-import scala.Some
-import net.liftweb.json.MappingException
-import net.liftweb.json.JsonAST.JArray
+import com.neilshannon.security.MD5
 import dispatch.classic.{Http, url}
+import net.liftweb.json.JsonAST.{JArray, JField, JString, _}
+import net.liftweb.json.{DefaultFormats, JsonAST, MappingException}
+import org.clapper.avsl.Logger
+
+import scala.collection.mutable
 
 object LinkedIn extends LiftJsonParsing {
   implicit val formats = DefaultFormats

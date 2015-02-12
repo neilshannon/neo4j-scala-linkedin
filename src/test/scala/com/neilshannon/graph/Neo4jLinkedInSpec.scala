@@ -1,7 +1,9 @@
+package com.neilshannon.graph
+
 import com.neilshannon.Neo4jLinkedIn
 import dispatch.classic.{ConfiguredHttpClient, Http}
-import org.apache.http.{HttpResponse, HttpRequest}
 import org.apache.http.protocol.HttpContext
+import org.apache.http.{HttpRequest, HttpResponse}
 import org.specs2.mutable.Specification
 import unfiltered.specs2.jetty.Served
 

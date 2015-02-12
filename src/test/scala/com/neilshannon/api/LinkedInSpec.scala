@@ -17,7 +17,7 @@ class LinkedInSpec extends Specification {
       val jsonString = io.Source.fromInputStream(getClass.getResourceAsStream("/connections.json")).mkString
       val json = parse(jsonString)
       val people = LinkedIn.extractConnections(json)
-      people.size mustEqual(356)
+      people.size mustEqual 356
     }
     "be able to extract the current user into a Person" in {
       val jsonString = io.Source.fromInputStream(getClass.getResourceAsStream("/profile.json")).mkString
