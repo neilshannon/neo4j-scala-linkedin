@@ -46,6 +46,13 @@ object DB {
     }
     log.info("Access token saved for user ID [" +  userID + "]")
   }
+
+  def removeAccessToken(userID: String) = {
+    transaction {
+      tokens.deleteWhere(t => t.user_id === userID)
+    }
+  }
+
 }
 
 class DB {}

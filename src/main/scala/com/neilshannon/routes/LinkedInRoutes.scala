@@ -1,22 +1,16 @@
 package com.neilshannon.routes
 
-import unfiltered.request._
-import unfiltered.response._
 import com.neilshannon.api.LinkedIn
-import unfiltered.filter.Intent
-import unfiltered.request.QParams._
-import com.neilshannon.config.Configuration
-import com.neilshannon.graph.{Graph, Neo4j}
 import com.neilshannon.db.DB
+import com.neilshannon.graph.{Graph, Neo4j}
 import unfiltered.Cookie
+import unfiltered.filter.Intent
+import unfiltered.request._
+import unfiltered.response.{Redirect, ResponseString, _}
 import unfiltered.scalate.Scalate
-import unfiltered.response.Redirect
-import unfiltered.Cookie
-import scala.Some
-import unfiltered.response.ResponseString
 
 object LinkedInRoutes {
-  import QParams._
+  import unfiltered.request.QParams._
 
   def intent = Intent {
     case GET(Path("/linkedin_auth")) & Cookies(cookies) => {
@@ -52,6 +46,27 @@ object LinkedInRoutes {
           )
         }
         case _ => Redirect(LinkedIn.redirectUrl)
+      }
+    }
+
+    case req @ GET(Path("/home")) & Cookies(cookies) => {
+      cookies("linkedin_id") match {
+        case Some(Cookie(_, linkedin_id, _, _, _, _, _, _)) => {
+          DB.getAccessToken(linkedin_id).map { token =>
+            val person = LinkedIn.getProfile(token.auth_token).get
+            val stats = Graph.getRelationshipCountsByDepthForUser(linkedin_id)
+            Ok ~> Scalate(
+              req,
+              "templates/home.jade",
+              ("pageTitle", "Home"),
+              ("person", person),
+              ("stats", stats)
+            )
+          }.getOrElse(
+              Redirect("/index") //user not logged in
+            )
+        }
+        case _ => Redirect("/index")
       }
     }
 
