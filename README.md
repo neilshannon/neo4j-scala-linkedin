@@ -1,5 +1,7 @@
-neo4j-linkedin
-==============
+neo4j-linkedin (deprecated)
+===========================
+
+*LinkedIn has turned off public access to the API features necessary for this project and made them accessible to paid partners only.*
 
 This project allows a group of people in a room to log in to their LinkedIn accounts and determine how everyone
 in the room is connected to one another.  Authentication occurs with LinkedIn via OAuth2.  The connections are
